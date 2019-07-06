@@ -1,4 +1,6 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/sources_1/new/MAC.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MAC
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/sim_1/new/MAC_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MAC_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/sources_1/new/rdp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rdp
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/sources_1/new/rdp_wrp_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rdp_wrapper_fifo_buff
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/sim_1/new/rdp_wrapper_fifo_buff_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rdp_wrapper_fifo_buff_tb

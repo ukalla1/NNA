@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log MAC.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MAC.tcl
+EAStep vivado -log rdp_wrapper_fifo_buff.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source rdp_wrapper_fifo_buff.tcl

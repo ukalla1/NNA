@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"rdp_wrapper_fifo_buff_tb_func_synth.v" \
+"../../../../../NNA.srcs/sim_1/new/rdp_wrapper_fifo_buff_tb.v" \
+
+# Do not sort compile order
+nosort

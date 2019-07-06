@@ -1,0 +1,21 @@
+Vivado Simulator 2017.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.3/bin/unwrapped/win64.o/xelab.exe -wto 39fa21871d594afe9bc047ee6bd70fc0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot rdp_wrapper_fifo_buff_tb_func_impl xil_defaultlib.rdp_wrapper_fifo_buff_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-426] cannot find port clkB on this module [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/sim_1/new/rdp_wrapper_fifo_buff_tb.v:46]
+ERROR: [VRFC 10-426] cannot find port clkA on this module [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/sim_1/new/rdp_wrapper_fifo_buff_tb.v:45]
+ERROR: [VRFC 10-2063] Module <OBUF> not found while processing module instance <almost_empty_OBUF_inst> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:322]
+ERROR: [VRFC 10-2063] Module <LUT5> not found while processing module instance <almost_empty_i_1> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:325]
+ERROR: [VRFC 10-2063] Module <FDRE> not found while processing module instance <almost_empty_reg> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:334]
+ERROR: [VRFC 10-2063] Module <LUT6> not found while processing module instance <almost_full_i_1> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:345]
+ERROR: [VRFC 10-2063] Module <BUFG> not found while processing module instance <clk_IBUF_BUFG_inst> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:393]
+ERROR: [VRFC 10-2063] Module <IBUF> not found while processing module instance <clk_IBUF_inst> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:396]
+ERROR: [VRFC 10-2063] Module <LUT2> not found while processing module instance <empty_i_4> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:536]
+ERROR: [VRFC 10-2063] Module <CARRY4> not found while processing module instance <empty_reg_i_2> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:568]
+ERROR: [VRFC 10-2063] Module <rdp> not found while processing module instance <ram_2_port> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:681]
+ERROR: [VRFC 10-2063] Module <LUT3> not found while processing module instance <rd_cntr[1]_i_1> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:695]
+ERROR: [VRFC 10-2063] Module <LUT4> not found while processing module instance <rd_cntr[2]_i_1> [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/impl/func/xsim/rdp_wrapper_fifo_buff_tb_func_impl.v:702]
+WARNING: [VRFC 10-2534] module rdp_wrapper_fifo_buff does not have a parameter named DATA_WIDTH [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/sim_1/new/rdp_wrapper_fifo_buff_tb.v:42]
+WARNING: [VRFC 10-2534] module rdp_wrapper_fifo_buff does not have a parameter named ADDRS_WIDTH [C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/sim_1/new/rdp_wrapper_fifo_buff_tb.v:43]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

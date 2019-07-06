@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log MAC.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MAC.tcl" );
+         "-log rdp_wrapper_fifo_buff.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source rdp_wrapper_fifo_buff.tcl" );
 
 
 

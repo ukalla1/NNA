@@ -2,11 +2,11 @@
 # Webtalk v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Tue Jul  2 20:52:53 2019
-# Process ID: 3224
+# Start of session at: Fri Jul  5 19:50:56 2019
+# Process ID: 3268
 # Current directory: C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/behav/xsim/xsim.dir/MAC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/behav/xsim/xsim.dir/rdp_wrapper_fifo_buff_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/behav/xsim/xsim.dir/MAC_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.sim/sim_1/behav/xsim/xsim.dir/rdp_wrapper_fifo_buff_tb_behav/webtalk/xsim_webtalk.tcl -notrace

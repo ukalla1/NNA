@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1562117237">
-  <File Type="PA-TCL" Name="MAC.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="MAC_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="MAC_reports.tcl"/>
-  <File Type="RDS-RDS" Name="MAC.vds"/>
-  <File Type="RDS-UTIL" Name="MAC_utilization_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1562375223">
+  <File Type="PA-TCL" Name="rdp_wrapper_fifo_buff.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="rdp_wrapper_fifo_buff_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="rdp_wrapper_fifo_buff_reports.tcl"/>
+  <File Type="RDS-RDS" Name="rdp_wrapper_fifo_buff.vds"/>
+  <File Type="RDS-UTIL" Name="rdp_wrapper_fifo_buff_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="MAC_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="MAC.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="MAC_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="MAC_timing_summary_synth.pb"/>
+  <File Type="RDS-DCP" Name="rdp_wrapper_fifo_buff.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="rdp_wrapper_fifo_buff_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="rdp_wrapper_fifo_buff_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/rdp.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/rdp_wrp_fifo.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/MAC.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -20,7 +35,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="MAC"/>
+      <Option Name="TopModule" Val="rdp_wrapper_fifo_buff"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -38,9 +53,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Strategy_1" Flow="Vivado Synthesis 2017">
-      <Desc>accltr</Desc>
-    </StratHandle>
+    <StratHandle Name="Strategy_1" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design">
       <Option Id="MaxDsp">0</Option>
     </Step>

@@ -2,11 +2,11 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Tue Jul  2 21:29:08 2019
-# Process ID: 17440
+# Start of session at: Fri Jul  5 21:12:29 2019
+# Process ID: 18552
 # Current directory: C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.runs/impl_1
-# Command line: vivado.exe -log MAC.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MAC.tcl -notrace
-# Log file: C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.runs/impl_1/MAC.vdi
+# Command line: vivado.exe -log rdp_wrapper_fifo_buff.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source rdp_wrapper_fifo_buff.tcl -notrace
+# Log file: C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.runs/impl_1/rdp_wrapper_fifo_buff.vdi
 # Journal file: C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source MAC.tcl -notrace
+source rdp_wrapper_fifo_buff.tcl -notrace
