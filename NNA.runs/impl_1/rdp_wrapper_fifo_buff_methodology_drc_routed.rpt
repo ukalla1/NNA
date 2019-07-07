@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Fri Jul  5 21:14:42 2019
+| Date         : Sat Jul  6 15:53:33 2019
 | Host         : tensaZangetsu running 64-bit major release  (build 9200)
 | Command      : report_methodology -file rdp_wrapper_fifo_buff_methodology_drc_routed.rpt -pb rdp_wrapper_fifo_buff_methodology_drc_routed.pb -rpx rdp_wrapper_fifo_buff_methodology_drc_routed.rpx
 | Design       : rdp_wrapper_fifo_buff
@@ -23,13 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 25
-+-----------+----------+--------------------------------------------+------------+
-| Rule      | Severity | Description                                | Violations |
-+-----------+----------+--------------------------------------------+------------+
-| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal | 1          |
-| TIMING-18 | Warning  | Missing input or output delay              | 24         |
-+-----------+----------+--------------------------------------------+------------+
+             Violations found: 27
++-----------+----------+---------------------------------------------+------------+
+| Rule      | Severity | Description                                 | Violations |
++-----------+----------+---------------------------------------------+------------+
+| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal  | 1          |
+| TIMING-18 | Warning  | Missing input or output delay               | 24         |
+| TIMING-35 | Warning  | No common node in paths with the same clock | 1          |
+| XDCB-2    | Warning  | Clock defined on multiple objects           | 1          |
++-----------+----------+---------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -156,6 +158,18 @@ Related violations: <none>
 TIMING-18#24 Warning
 Missing input or output delay  
 An output delay is missing on full relative to clock(s) clk
+Related violations: <none>
+
+TIMING-35#1 Warning
+No common node in paths with the same clock  
+The clock clk has paths without a common node. First path found between rd_cntr_reg[2]/C and almost_full_reg/D. Please review clock constraints
+Related violations: <none>
+
+XDCB-2#1 Warning
+Clock defined on multiple objects  
+The clock clk is defined on multiple objects. Although this is logically functional for timing analysis, it cannot exist in hardware. It is recommended to define a primary clock on a single object.
+create_clock -period 6.534 -name clk -waveform {0.000 3.267} -add [get_ports -filter { NAME =~  "*clk*" && DIRECTION == "IN" }]
+C:/Users/uttej/Desktop/VivadoProjs/NNA/NNA.srcs/constrs_1/new/tim.xdc (Line: 1)
 Related violations: <none>
 
 

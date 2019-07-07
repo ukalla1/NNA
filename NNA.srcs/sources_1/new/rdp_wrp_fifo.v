@@ -27,7 +27,7 @@ module rdp_wrapper_fifo_buff #(
   //localparam ADDRS_WIDTH_INTERNAL = ADDRS_WIDTH + 1,
   //localparam RAM_DEPTH = 255
 )(
-  input clk,
+  input clkA, clkB,
   input rst,
   input clr_ptrs,
   input rdn, wrn,
@@ -42,7 +42,7 @@ module rdp_wrapper_fifo_buff #(
   localparam ADDRS_WIDTH_INTERNAL = ADDRS_WIDTH + 1;
   localparam RAM_DEPTH = (1 << ADDRS_WIDTH)-1;
   
-  wire clkA, clkB;
+  //wire clkA, clkB;
   
   (*keep = "ture"*)reg [ADDRS_WIDTH_INTERNAL-1:0] wr_cntr, rd_cntr;
   reg [ADDRS_WIDTH-1:0] wr_cntr_delayed, rd_cntr_delayed;
@@ -70,8 +70,8 @@ module rdp_wrapper_fifo_buff #(
 //  assign almost_full = almost_full_internal;
 //  assign almost_empty = almost_empty_internal;
   
-  assign clkA = clk;
-  assign clkB = clk;
+//  assign clkA = clk;
+//  assign clkB = clk;
   
   //assigning outputs
   always @(posedge clkA) begin
@@ -230,18 +230,35 @@ always @(*) begin
             end
         end
         else begin
-            if(wr_cntr - rd_cntr >= RAM_DEPTH) begin
-                full_internal = 1'b1;
+            if(rd_cntr_ovf) begin
+                if(rd_cntr - wr_cntr <= 1) begin
+                    full_internal = 1'b1;
+                end
+                else begin
+                    full_internal = 1'b0;
+                end
+                
+                if(rd_cntr - wr_cntr <= 8) begin
+                    almost_full_internal = 1'b1;
+                end
+                else begin
+                    almost_full_internal = 1'b0;
+                end
             end
             else begin
-                full_internal = 1'b0;
-            end
-            
-            if(wr_cntr - rd_cntr >= RAM_DEPTH - 8) begin
-                almost_full_internal = 1'b1;
-            end
-            else begin
-                almost_full_internal = 1'b0;
+                if(wr_cntr - rd_cntr >= RAM_DEPTH) begin
+                    full_internal = 1'b1;
+                end
+                else begin
+                    full_internal = 1'b0;
+                end
+                
+                if(wr_cntr - rd_cntr >= RAM_DEPTH - 8) begin
+                    almost_full_internal = 1'b1;
+                end
+                else begin
+                    almost_full_internal = 1'b0;
+                end
             end
         end
     end
@@ -255,14 +272,14 @@ always @(*) begin
     end
     else begin
         if(rd_cntr_ovf) begin
-            if(wr_cntr - rd_cntr <= 0) begin
+            if(rd_cntr - wr_cntr <= 0) begin
                 empty_internal = 1'b1;
             end
             else begin
                 empty_internal = 1'b0;
             end
             
-            if(wr_cntr - rd_cntr <= 8) begin
+            if(rd_cntr - wr_cntr >= RAM_DEPTH - 8) begin
                 almost_empty_internal = 1'b1;
             end
             else begin
@@ -270,18 +287,35 @@ always @(*) begin
             end
         end
         else begin
-            if(wr_cntr - rd_cntr <= 0) begin
-                empty_internal = 1'b1;
+            if(!wr_cntr_ovf) begin
+                if(rd_cntr - wr_cntr <= 0) begin
+                    empty_internal = 1'b1;
+                end
+                else begin
+                    empty_internal = 1'b0;
+                end
+                
+                if(rd_cntr - wr_cntr >= RAM_DEPTH - 8) begin
+                    almost_empty_internal = 1'b1;
+                end
+                else begin
+                    almost_empty_internal = 1'b0;
+                end
             end
             else begin
-                empty_internal = 1'b0;
-            end
-            
-            if(wr_cntr - rd_cntr <= 8) begin
-                almost_empty_internal = 1'b1;
-            end
-            else begin
-                almost_empty_internal = 1'b0;
+                if(wr_cntr - rd_cntr <= 0) begin
+                    empty_internal = 1'b1;
+                end
+                else begin
+                    empty_internal = 1'b0;
+                end
+                
+                if(wr_cntr - rd_cntr <= 8) begin
+                    almost_empty_internal = 1'b1;
+                end
+                else begin
+                    almost_empty_internal = 1'b0;
+                end
             end
         end
     end

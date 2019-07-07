@@ -36,7 +36,7 @@ module rdp_wrapper_fifo_buff_tb #(
   wire almost_empty;
   wire [DATA_WIDTH-1:0] data_out;
   
-  integer period = 20, i;
+  integer periodA = 40, periodB = 30, i;
   
   rdp_wrapper_fifo_buff #(
     .DATA_WIDTH(DATA_WIDTH),
@@ -81,45 +81,47 @@ module rdp_wrapper_fifo_buff_tb #(
   endtask
   
   task clock_genA;
-    forever #(period/2) clkA = ~clkA;
+    forever #(periodA/2) clkA = ~clkA;
   endtask
   
   task clock_genB;
-    forever #(period/2) clkB = ~clkB;
+    forever #(periodB/2) clkB = ~clkB;
   endtask
   
   task gen_vectors;
     begin
-        #(period);
+        #(periodA);
         rst = 1'b1;
       
-        #(period);
+        #(periodA);
         rst = 1'b0;
         
-        #(period);
+        #(periodA);
         
-        for(i=0; i< 20; i = i+1) begin
-            data_in = i;
-            wrn = 1'b1;
-          #(period);
-        end
+        fork
+            parallel_write;
+            parallel_read;
+//        for(i=0; i< 20; i = i+1) begin
+//            data_in = i;
+//            wrn = 1'b1;
+//          #(periodA);
+//        end
         
-        #(period);
-        wrn = 1'b0;
+//        #(period);
+//        wrn = 1'b0;
         
-        #(period);
-        for(i=0; i< 20; i= i + 1) begin
-            rdn = 1'b1;
-          #(period);
-        end
+//        #(period);
+//        for(i=0; i< 20; i= i + 1) begin
+//            rdn = 1'b1;
+//          #(period);
+//        end
+        join
         
-        rdn = 1'b0;
-        
-        #(10*period);
+        #(10*periodA);
         
         clr_ptrs = 1'b1;
         
-        #(period);
+        #(periodA);
         clr_ptrs = 1'b0;
         
         end_sim;
@@ -128,9 +130,33 @@ module rdp_wrapper_fifo_buff_tb #(
   
   task end_sim;
     begin
-        #(100*period);
+        #(100*periodA);
         $finish;
     end  
   endtask
   
+  task parallel_write;
+    integer j;
+    begin
+        for (j = 0; j< 500; j = j + 1) begin
+            data_in = j;
+            wrn = 1'b1;
+            #(periodA);
+        end
+        wrn = 1'b0;
+    end
+  endtask
+  
+  task parallel_read;
+    integer j;
+    begin
+      #(10*periodA);
+      for (j = 0; j< 1000; j = j + 1) begin
+            rdn = 1'b1;
+          #(periodB);
+      end
+      rdn = 1'b0;
+    end
+  endtask
+
 endmodule

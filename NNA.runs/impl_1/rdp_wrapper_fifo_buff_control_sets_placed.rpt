@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Fri Jul  5 21:13:40 2019
+| Date         : Sat Jul  6 15:51:52 2019
 | Host         : tensaZangetsu running 64-bit major release  (build 9200)
 | Command      : report_control_sets -file rdp_wrapper_fifo_buff_control_sets_placed.rpt
 | Design       : rdp_wrapper_fifo_buff
@@ -21,7 +21,7 @@ Table of Contents
 +-------------------------------+-------+
 |             Status            | Count |
 +-------------------------------+-------+
-| Number of unique control sets |     4 |
+| Number of unique control sets |     6 |
 +-------------------------------+-------+
 
 
@@ -31,9 +31,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              16 |            5 |
+| No           | No                    | No                     |              22 |           11 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              34 |           16 |
+| No           | Yes                   | No                     |              28 |           12 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
